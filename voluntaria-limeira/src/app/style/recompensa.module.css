@@ -1,0 +1,86 @@
+.sectionRecompensa{
+
+}
+.form{
+    position: fixed;      
+    top: 50%;             
+    left: 50%;    
+    transform: translate(-50%, -50%);
+    z-index: 1; 
+    background-color: var(--branco);
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    color: aliceblue;
+    width: 50%;
+    height: 40%;
+    box-shadow: 0px -1px 10px -2px rgb(161, 161, 161);
+    border-radius: 10px;
+}
+.form h2{
+    color: var(--laranja-escuro);
+}
+.infoForm{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 75%;
+}
+
+.containerInput{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.containerInput input{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 30px;
+    width: 98%;
+    border: none;
+    border-bottom: 1.5px solid var(--laranja-claro);
+}
+
+.btnCadastroRecompensa{
+    width: 45%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: aliceblue;
+    background-color: var(--laranja-escuro);
+    border: 2px solid var(--laranja-escuro);
+    border-radius: 5px;
+    transition: .2s ease-in-out;
+}
+
+.btnCadastroRecompensa:hover{
+    color: var(--laranja-escuro);
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+.buttonCadastrarRecompensa{
+    position: fixed;      
+    bottom: 5%;             
+    right: 2%;    
+    transform: translate(-50%, -50%);
+    z-index: 1;   
+    height: 35px;
+    width:35px;
+    text-align: center;
+    font-size: x-large;
+    background-color: var(--laranja-escuro);
+    border: 2px solid var(--laranja-escuro);
+    border-radius: 20px;
+    color: aliceblue;
+    transition: .5s ease-in-out;   
+}
+.buttonCadastrarRecompensa:hover{   
+    background-color: white;
+    border-radius: 2px;
+    color: var(--laranja-escuro); 
+    box-shadow: 0px 0px 10px 0px var(--laranja-escuro);  
+}

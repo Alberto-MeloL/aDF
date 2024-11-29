@@ -1,0 +1,78 @@
+
+ .apresentacao {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  align-items: center;
+}
+
+.introducao {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-column: 1;
+}
+
+.titulo {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  font-size: 35pt;
+  margin: 0;
+}
+.titulo p{
+  margin: 0;
+}
+.destaque {
+  display: inline;
+  color: var(--laranja-escuro);
+  font-size: 2.5rem;
+  margin-left: 0.5rem;
+}
+.objetivo {
+  width: 75%;
+  /* font-size: 20pt; */
+  color: var(--cinza-escuro);
+}
+
+.imagem {
+  width: 100%;
+  height: 90%;
+  grid-column: 2;
+  background-image: url(/imagem-principal.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  position: absolute;
+  z-index: -10;
+}
+
+.imagem img {
+  width: 100%;
+  max-width: 500px;
+}
+
+.paraEmpresas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Espaço entre os elementos */
+}
+
+.linha {
+  width: 60%;
+  background-color: var(--laranja-escuro);
+  border: none;
+  height: 1px;
+}
+
+.explicacao {
+  width: 60%;
+  text-align: center;
+  color: var(--cinza-escuro);
+}
