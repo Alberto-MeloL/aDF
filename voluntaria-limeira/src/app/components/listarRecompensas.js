@@ -35,7 +35,7 @@ function ListarRecompensas() {
     };
 
     fetchRecompensas();
-  }, []);
+  }, [])  ;
 
   // Função para aceitar uma recompensa
   const handleAceitar = async (id) => {

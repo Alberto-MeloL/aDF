@@ -44,7 +44,7 @@ function Header() {
         setIsAdmin(adminDocSnap.exists()); // Atualiza o estado se o usuário for administrador
 
         // Verificar se o usuário é uma empresa
-        const empresaDocRef = doc(db, "Empresas", user.uid);
+        const empresaDocRef = doc(db, "Empresa", user.uid);
         const empresaDocSnap = await getDoc(empresaDocRef);
         setIsEmpresa(empresaDocSnap.exists()); // Atualiza o estado se o usuário for empresa
       } else {
