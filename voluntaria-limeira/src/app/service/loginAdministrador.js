@@ -12,25 +12,17 @@ async function loginAdministrador(email, senha) {
 
     // Verificar se o usuário logado é um administrador
     const usuarioLogado = usuarioDados.user;
-    const emailExiste = await verificarEmail(usuarioLogado.uid); // Agora usando o UID para verificar
+    const isAdmin = await verificarEmailAdmin(email);
 
-    if (!emailExiste) {
+    if (!isAdmin) {
       throw new Error(
         "O usuário autenticado não está registrado como administrador."
       );
     }
 
-    // Buscar o documento do administrador no Firestore
-    const refAdministrador = doc(db, "Administradores", email);
-    const docAdministrador = await getDoc(refAdministrador);
-    if (docAdministrador.exists()) {
-      console.log("Usuário é Administrador");
-      setTipoUsuario("Administrador");
-    } else {
-      return null; // Retorna null se não for administrador
-    }
-
-    // Retorna o usuário autenticado
+    // Retorna o usuário autenticado se ele for administrador
+    console.log("Usuário é Administrador");
+    setTipoUsuario("Administrador");
     return usuarioLogado;
   } catch (err) {
     console.error(`Houve um erro ao realizar o login: ${err.message}`);
@@ -39,13 +31,13 @@ async function loginAdministrador(email, senha) {
 }
 
 // Função para verificar se o email pertence a um administrador no Firestore
-async function verificarEmail(uid) {
-  const docRef = doc(db, "Administradores", uid); // Buscando pelo UID do usuário autenticado
+async function verificarEmailAdmin(email) {
+  const docRef = doc(db, "Administradores", email); // Buscando pelo email do usuário autenticado
   const docSnap = await getDoc(docRef); // Obtém os dados do documento
 
   if (docSnap.exists()) {
     console.log("Dados encontrados:", docSnap.data());
-    return true; // UID encontrado no Firestore como administrador
+    return true; // Email encontrado no Firestore como administrador
   } else {
     console.error("Nenhum dado foi encontrado.");
     return false; // Não encontrado como administrador
